@@ -30,7 +30,20 @@ void swap(int *a, int *b) {
     }
 
 }
-
+//selection sort mthd
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) 
+    {
+      //finding minimum index while traversing 
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+       swap(&arr[minIndex], &arr[i]);
+        }
+    }
 //main function
 int main()
  {
@@ -48,8 +61,8 @@ int main()
   int op;
   
   printf("1. insertion sort\n");
-  /*printf("2. Selection sort\n");
-  printf("3. Bubble sort\n");
+  printf("2. Selection sort\n");
+ /* printf("3. Bubble sort\n");
   printf("4. Merge sort\n");
   printf("5. Quick sort\n");*/
   printf("input type of sorting to do  :\n");
@@ -62,6 +75,12 @@ int main()
     printf("Sorted array in ascending order:\n");
     printArray(data, n);
     break;
+    // sorting of array through selection sort
+ case 2:
+    selectionSort(data, n);
+    printf("Sorted array in acsending Order:\n");
+    printArray(data,n);
+     break;
  
   default:
   printf("\n You have entered an Invalid input ");
