@@ -45,6 +45,9 @@ int main()
              //printing result
 	      printf("\n The result of %f %c %f  = %f", num1, Operator, num2, result);
   			break;	
+             //invalid input
+  		default:
+		printf("\n You have entered an Invalid Operator ");
         			    			
 	}
   
