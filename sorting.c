@@ -209,6 +209,9 @@ int main()
     printf("Sorted array in ascending order: \n");
     printArray(data, n);
      break;
+     //invalid input
+ default:
+  printf("\n You have entered an Invalid input ");
 
 
   return 0;
