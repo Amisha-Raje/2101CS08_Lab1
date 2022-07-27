@@ -44,6 +44,23 @@ void selectionSort(int arr[], int n) {
        swap(&arr[minIndex], &arr[i]);
         }
     }
+    //bubble sort
+void bubbleSort(int arr[], int n) 
+{
+for (int i = 0; i < n - 1; ++i) {
+      
+    for (int j = 0; j < n - i - 1; ++j) 
+    {
+      // compare two adjacent elements
+     
+      if (arr[j] > arr[j + 1])
+       {
+        // swapping  if element are not in the intended order
+        swap(&arr[j],&arr[j+1]);
+      }
+    }
+  }
+}
 //main function
 int main()
  {
@@ -62,8 +79,8 @@ int main()
   
   printf("1. insertion sort\n");
   printf("2. Selection sort\n");
- /* printf("3. Bubble sort\n");
-  printf("4. Merge sort\n");
+  printf("3. Bubble sort\n");
+ /* printf("4. Merge sort\n");
   printf("5. Quick sort\n");*/
   printf("input type of sorting to do  :\n");
   scanf("%d", &op);
@@ -81,9 +98,14 @@ int main()
     printf("Sorted array in acsending Order:\n");
     printArray(data,n);
      break;
- 
-  default:
-  printf("\n You have entered an Invalid input ");
+  // sorting of array through bubble sort
+ case 3:
+  
+    bubbleSort(data, n);
+    printf("Sorted array in ascending Order:\n");
+    printArray(data, n);
+     break;
+
 
   return 0;
   }
