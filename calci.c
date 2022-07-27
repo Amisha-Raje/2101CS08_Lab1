@@ -19,6 +19,15 @@ int main()
              //printing result
 	    printf("\n The result of %f %c %f  = %f", num1, Operator, num2, result);
   			break;
+             //-for subtracting 2 nos
+        case '-':
+        //enter 2 nos 
+	    printf("\n Please Enter two Values for two Operations: num1 and num2  :  ");
+  	    scanf("%f%f", &num1, &num2);
+  			result = num1 - num2;
+         //printing result
+	     printf("\n The result of %f %c %f  = %f", num1, Operator, num2, result);
+  			break;  		
         			    			
 	}
   
