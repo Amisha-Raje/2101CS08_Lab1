@@ -118,6 +118,41 @@ void mergeSort(int arr[], int l, int r)
     merge(arr, l, m, r);
   }
 }
+int partition(int arr[], int left, int right) {
+  
+  // select the rightmost element as pivot
+  int pivot = arr[right];
+  int i = (left - 1);
+  // traverse each element of the arrayand compare them with the pivot
+  for (int j = left; j < right; j++) {
+    if (arr[j] <= pivot) {
+        
+      // if element smaller than pivot is found ,swap it with the greater element pointed by i
+      i++;
+      swap(&arr[i], &arr[j]);
+    }
+  }
+
+  // swap the pivot element with the greater element at i
+  swap(&arr[i + 1], &arr[right]);
+  
+  // return the partition point
+  return (i + 1);
+}
+void quickSort(int arr[], int left, int right) {
+  if (left < right) 
+  {
+    
+    // find the pivot element such that elements smaller than pivot are on left of pivot
+   int pi = partition(arr, left, right);
+    
+    // recursive call on the left of pivot
+    quickSort(arr, left, pi - 1);
+    
+    // recursive call on the right of pivot
+    quickSort(arr, pi + 1, right);
+  }
+}
 //main function
 int main()
  {
@@ -138,7 +173,7 @@ int main()
   printf("2. Selection sort\n");
   printf("3. Bubble sort\n");
   printf("4. Merge sort\n");
-  //printf("5. Quick sort\n");
+  printf("5. Quick sort\n");
   printf("input type of sorting to do  :\n");
   scanf("%d", &op);
   switch(op)
@@ -165,6 +200,12 @@ int main()
         // sorting of array through merge sort
   case 4:
     mergeSort(data, 0, n - 1);
+    printf("Sorted array in ascending order: \n");
+    printArray(data, n);
+     break;
+       // sorting of array through quick sort
+   case 5:
+    quickSort(data, 0, n - 1);
     printf("Sorted array in ascending order: \n");
     printArray(data, n);
      break;
